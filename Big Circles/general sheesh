@@ -1,0 +1,10 @@
+function drawDynamicCircle(x, y) {
+  push();
+  translate(x + 20, y + 20);
+  noFill();
+  stroke(random(255), random(255), random(255));
+  let size = 20 + 10 * sin(frameCount * 0.1 + (x + y) * 0.1);
+  let pulse = map(sin(frameCount * 0.1), -1, 1, 0.5, 1.5);
+  ellipse(0, 0, size * pulse, size * pulse);
+  pop();
+}
